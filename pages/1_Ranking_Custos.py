@@ -6,7 +6,7 @@ from pathlib import Path
 
 # ---------- Config ----------
 st.set_page_config(page_title="Ranking de Custos por Filial", layout="wide")
-FILE_PATH = “./Base de Dados - Teste de Gestão de Custos (2).xlsx"
+FILE_PATH = “Base de Dados - Teste de Gestão de Custos (2).xlsx"
 SHEET_NAME = "Banco"
 
 # ---------- Utilitários mínimos ----------
@@ -135,6 +135,7 @@ st.markdown(disp_display_tot.to_html(index=False, justify='left', classes='table
 
 # download CSV (numérico, sem linha de total)
 st.download_button("⬇️ Baixar CSV (agregado por filial)", agg[['Ranking','Nome Filial','custo_total','custo_frete']].to_csv(index=False, encoding='utf-8-sig').encode('utf-8-sig'), file_name="custos_por_filial_aggregado.csv", mime="text/csv")
+
 
 
 
